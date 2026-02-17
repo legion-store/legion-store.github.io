@@ -3,51 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legion Store - TOKSIK & More</title>
+    <title>Legion Store</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- MENU SUPERIOR TOKSIK STYLE -->
+    <!-- MENU SUPERIOR -->
     <nav class="top-menu">
         <div class="menu-container">
-            <div class="menu-logo">🦋 TOKSIK &amp;</div>
+            <div class="logo">🦋 TOKSIK &amp;</div>
             <div class="menu-links">
-                <a href="#home">HOME</a>
-                <a href="#cards">CATÁLOGO</a>
-                <a href="#blog">BLOG</a>
+                <a href="#">HOME</a>
+                <a href="#catalog">CATÁLOGO</a>
             </div>
-            <div class="menu-right">🖤</div>
+            <div class="menu-icon">🖤</div>
         </div>
     </nav>
 
-    <!-- HERO GRANDE TOKSIK -->
-    <section class="hero-section" id="home">
-        <div class="hero-overlay">
-            <!-- TROQUE PELA TUA FOTO PRINCIPAL -->
-            <div class="hero-image" style="background-image: url('https://via.placeholder.com/1920x1080?text=TOKSIS+PRINCIPAL');"></div>
-            <div class="hero-content">
-                <h1 class="hero-title">TOKSIK</h1>
-                <p class="hero-subtitle">Clique para ver perfil</p>
+    <!-- HERO CENTRAL (SEM BORDA AMARELA) -->
+    <section class="hero-central">
+        <!-- TUA FOTO COM MOLDURA CUSTOM -->
+        <a href="ficha1.html" class="hero-frame">
+            <div class="hero-placeholder">
+                <!-- TROQUE SÓ ESSA URL -->
+                <img src="https://via.placeholder.com/800x1000?text=TOKSIS" alt="TOKSIS" class="hero-img">
             </div>
-        </div>
+            <div class="hero-overlay">
+                <h1>TOKSIK</h1>
+                <p>Clique para perfil</p>
+            </div>
+        </a>
     </section>
 
-    <!-- CARDS ABAIXO -->
-    <section class="cards-section" id="cards">
+    <!-- CATÁLOGO ABAIXO -->
+    <section class="catalog-section" id="catalog">
         <div class="container">
-            <a href="ficha1.html" class="card-post hero-card">
-                <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=TOKSIS');"></div>
-                <div class="card-info">
-                    <h2>TOKSIK</h2>
-                    <div class="raridade legendary">Legendary</div>
-                </div>
-            </a>
-
+            <div class="section-bar">
+                <h2>CATÁLOGO</h2>
+                <div class="bar-line"></div>
+            </div>
+            
             <a href="ficha2.html" class="card-post">
-                <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=PERSONAGEM+2');"></div>
+                <div class="card-frame">
+                    <img src="https://via.placeholder.com/350x450?text=ITEM+2" alt="">
+                </div>
                 <div class="card-info">
-                    <h2>PERSONAGEM 2</h2>
-                    <div class="raridade epic">Epic</div>
+                    <h3>ITEM 2</h3>
+                    <span class="raridade epic">Epic</span>
                 </div>
             </a>
         </div>
