@@ -1,20 +1,67 @@
-/* IMPORTA FONTES DIABLO-LIKE DO GOOGLE FONTS */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Exo+2:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=MedievalSharp&family=Exo+2:wght@400;600&display=swap');
 
+/* BASE */
+* { box-sizing: border-box; }
 body {
     margin: 0;
     background: linear-gradient(180deg, #0a0a0f 0%, #1a0f0a 100%);
     color: #e8d5b7;
     font-family: 'Exo 2', sans-serif;
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
+/* MENU SUPERIOR TOKSIK */
+.top-menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(10, 10, 15, 0.95);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    border-bottom: 1px solid #333;
+}
+
+.menu-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu-logo {
+    font-family: 'Cinzel', serif;
+    font-size: 1.4rem;
+    color: #d4af37;
+    font-weight: 700;
+}
+
+.menu-links {
+    display: flex;
+    gap: 30px;
+}
+
+.menu-links a {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.menu-links a:hover { color: #d4af37; }
+.menu-right { font-size: 1.5rem; }
+
+/* HEADER */
 header {
     text-align: center;
-    padding: 60px 20px;
+    padding: 80px 20px 40px;
     background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
     border-bottom: 2px solid #d4af37;
-    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+    margin-top: 70px;
 }
 
 h1 {
@@ -34,6 +81,53 @@ h1 {
     letter-spacing: 2px;
 }
 
+/* HERO TOKSIK */
+.hero-section {
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-overlay { position: relative; height: 100%; }
+.hero-image {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.6);
+}
+
+.hero-content {
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 10;
+}
+
+.hero-title {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(3rem, 10vw, 8rem);
+    margin: 0;
+    text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+    letter-spacing: 8px;
+    background: linear-gradient(45deg, #d4af37, #f0e68c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.5rem;
+    margin-top: 15px;
+    opacity: 0.9;
+    text-shadow: 2px 2px 5px rgba(0,0,0,0.8);
+}
+
+/* CONTAINER */
 .container {
     max-width: 1200px;
     margin: auto;
@@ -43,11 +137,14 @@ h1 {
     gap: 30px;
 }
 
+/* CARDS */
 .card-post {
     text-decoration: none;
     display: block;
     transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     border: 1px solid #333;
+    border-radius: 12px;
+    overflow: hidden;
 }
 
 .card-post:hover {
@@ -61,168 +158,54 @@ h1 {
     background-size: cover;
     background-position: center;
     position: relative;
-    overflow: hidden;
 }
 
 .card-image::after {
     content: '';
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    top: 0; left: 0; right: 0; bottom: 0;
     background: linear-gradient(transparent 60%, rgba(0,0,0,0.8) 100%);
 }
 
 .card-info {
-    padding: 20px;
-    background: rgba(17, 17, 23, 0.9);
+    padding: 25px;
+    background: rgba(17, 17, 23, 0.95);
     backdrop-filter: blur(10px);
 }
 
 .card-info h2 {
     margin: 0 0 10px 0;
     font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     color: #f0e68c;
 }
 
 .raridade {
-    padding: 4px 12px;
+    padding: 6px 16px;
     border-radius: 20px;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
+    display: inline-block;
 }
 
-.raridade.legendary { background: linear-gradient(90deg, #ffd700, #ffed4e); color: #000; }
-.raridade.epic { background: linear-gradient(90deg, #9370db, #ba55d3); color: #fff; }
-.raridade.rare { background: linear-gradient(90deg, #4169e1, #6495ed); color: #fff; }
-
-.preview {
-    color: #aaa;
-    font-size: 0.9rem;
-    margin: 10px 0 0 0;
+.raridade.legendary { 
+    background: linear-gradient(90deg, #ffd700, #ffed4e); 
+    color: #000; 
+}
+.raridade.epic { 
+    background: linear-gradient(90deg, #9370db, #ba55d3); 
+    color: #fff; 
+}
+.raridade.rare { 
+    background: linear-gradient(90deg, #4169e1, #6495ed); 
+    color: #fff; 
 }
 
-/* PÁGINA DE FICHA (styles compartilhados) */
-.profile-container {
-    max-width: 900px;
-    margin: auto;
-    padding: 40px 20px;
-}
+/* FICHA DIABLO */
+.profile-container { max-width: 1400px; margin: auto; padding: 40px 20px; }
 
-.hero-image {
-    height: 500px;
-    width: 100%;
-    background-size: cover;
-    border: 3px solid #d4af37;
-    border-radius: 8px;
-    margin-bottom: 30px;
-}
-
-.section {
-    background: rgba(17, 17, 23, 0.9);
-    padding: 30px;
-    margin-bottom: 30px;
-    border: 1px solid #444;
-    border-radius: 8px;
-}
-
-.section h3 {
-    font-family: 'Cinzel', serif;
-    color: #f0e68c;
-    margin-top: 0;
-    font-size: 1.8rem;
-    border-bottom: 2px solid #d4af37;
-    padding-bottom: 10px;
-}
-
-/* GRID DE INVENTÁRIO DIABLO */
-.inventory {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 8px;
-    max-width: 600px;
-}
-
-.slot {
-    aspect-ratio: 1;
-    background: rgba(40, 40, 50, 0.8);
-    border: 2px solid #555;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.3s;
-    border-radius: 4px;
-}
-
-.slot:hover {
-    border-color: #d4af37;
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-}
-
-.slot.item {
-    background: linear-gradient(135deg, #444 0%, #666 100%);
-}
-
-.slot.item::before {
-    content: '';
-    position: absolute;
-    top: 4px;
-    left: 4px;
-    right: 4px;
-    bottom: 4px;
-    background-size: cover;
-    border-radius: 2px;
-}
-
-.slot.tooltip {
-    position: relative;
-}
-
-.tooltip-text {
-    visibility: hidden;
-    position: absolute;
-    bottom: 120%;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(0,0,0,0.95);
-    color: #fff;
-    padding: 10px;
-    border: 1px solid #d4af37;
-    border-radius: 4px;
-    white-space: nowrap;
-    font-size: 0.8rem;
-    z-index: 10;
-    min-width: 120px;
-}
-
-.slot:hover .tooltip-text {
-    visibility: visible;
-}
-
-footer {
-    text-align: center;
-    padding: 40px;
-    border-top: 1px solid #333;
-    color: #777;
-    margin-top: 60px;
-}
-
-/* RESPONSIVO */
-@media (max-width: 768px) {
-    .container {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-    
-    .inventory {
-        grid-template-columns: repeat(4, 1fr);
-    }
-}
-
-/* LAYOUT DIABLO 4 - 3 COLUNAS */
 .diablo-layout {
     display: grid;
     grid-template-columns: 1fr 2fr 1.5fr;
@@ -242,47 +225,31 @@ footer {
     font-family: 'Cinzel', serif;
     color: #d4af37;
     margin: 0 0 20px 0;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     text-align: center;
     border-bottom: 1px solid #666;
     padding-bottom: 10px;
 }
 
-/* PERSONAGEM */
-.personagem-col {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+.personagem-col { display: flex; flex-direction: column; align-items: center; }
 
 .personagem-image {
-    width: 280px;
-    height: 420px;
+    width: 280px; height: 420px;
     border: 3px solid #d4af37;
     border-radius: 12px;
     background-size: cover;
-    background-position: center;
     margin-bottom: 20px;
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
 }
 
-.stats-panel h3 {
-    color: #f0e68c;
-    margin: 0 0 15px 0;
-    text-align: center;
-}
-
+.stats-panel h3 { color: #f0e68c; margin: 0 0 15px 0; text-align: center; }
 .stats-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    font-size: 1rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 10px; font-size: 1.1rem;
 }
-
 .stat-label { color: #aaa; }
 .stat-value { color: #d4af37; font-weight: 600; }
 
-/* INVENTÁRIO */
 .inventory-grid {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
@@ -305,30 +272,21 @@ footer {
     box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
-.inventory-slot.vazio:hover { border-color: #666; }
-
 .item-icon {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     background-size: cover;
     border-radius: 6px;
 }
 
 .item-qtd {
     position: absolute;
-    top: 4px;
-    right: 4px;
+    top: 4px; right: 4px;
     background: rgba(0,0,0,0.8);
     color: #fff;
     padding: 2px 6px;
     font-size: 0.75rem;
     border-radius: 10px;
 }
-
-.inventory-slot.clicavel:hover { transform: scale(1.05); }
-
-/* ITEM SELECIONADO */
-.item-detail-col .coluna-title { text-align: left; }
 
 .item-preview {
     border: 2px solid #666;
@@ -342,24 +300,34 @@ footer {
     background: rgba(30, 30, 40, 0.8);
 }
 
-.no-item {
-    color: #888;
-    font-style: italic;
-}
-
-.item-detail {
-    animation: slideIn 0.5s;
-}
-
-.item-detail img {
-    width: 120px;
-    height: 120px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-
+.no-item { color: #888; font-style: italic; }
+.item-detail img { width: 120px; height: 120px; border-radius: 8px; margin-bottom: 15px; }
 .item-nome { font-size: 1.3rem; color: #d4af37; margin: 0 0 10px 0; }
-.item-desc { color: #ccc; line-height: 1.5; }
+
+.section {
+    background: rgba(17, 17, 23, 0.9);
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #444;
+    border-radius: 8px;
+}
+
+.section h3 {
+    font-family: 'Cinzel', serif;
+    color: #f0e68c;
+    margin-top: 0;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #333;
+    color: #777;
+    margin-top: 60px;
+}
 
 /* RESPONSIVO */
 @media (max-width: 1200px) {
@@ -367,7 +335,8 @@ footer {
     .inventory-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
-@keyframes slideIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+@media (max-width: 768px) {
+    .menu-container { flex-direction: column; gap: 10px; padding: 10px; }
+    .menu-links { gap: 20px; }
+    .cards-section .container { grid-template-columns: 1fr; }
 }
