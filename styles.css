@@ -88,7 +88,7 @@ nav { display: flex; justify-content: space-between; align-items: center; max-wi
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 1.2rem;
     box-shadow: 0 0 15px rgba(212,175,55,0.6);
 }
@@ -102,7 +102,7 @@ nav { display: flex; justify-content: space-between; align-items: center; max-wi
 
 .char-level {
     color: #d4af37 !important;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 /* SLOTS VERTICAIS GRANDES */
@@ -155,7 +155,7 @@ nav { display: flex; justify-content: space-between; align-items: center; max-wi
     padding: 4px 8px;
     border-radius: 4px;
     font-size: 0.8rem;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 /* ITEM SELECIONADO (MESMO TAMANHO) */
@@ -204,7 +204,7 @@ nav { display: flex; justify-content: space-between; align-items: center; max-wi
     color: #d4af37;
     padding: 5px 12px;
     border-radius: 20px;
-    font-weight: bold;
+    font-weight: normal;
     display: inline-block;
     margin-top: 10px;
 }
