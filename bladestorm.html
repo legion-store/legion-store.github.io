@@ -5,12 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bladestorm - Legion</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=MedievalSharp&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- MENU SUPERIOR -->
     <nav class="top-menu">
         <div class="menu-container">
             <div class="logo">
@@ -22,64 +19,94 @@
         </div>
     </nav>
 
-    <!-- FICHA 3 COLUNAS DIABLO 4 -->
     <section class="ficha-section">
         <div class="container">
             <div class="ficha-header">
                 <h1>Bladestorm</h1>
             </div>
-            <div class="ficha-grid">
-                <!-- COLUNA 1: STATS ESQUERDA -->
-                <div class="ficha-col">
-                    <div class="stat-block">
-                        <h3>Stats Primárias</h3>
-                        <div class="stat-row">
-                            <span class="stat-label">Dano</span>
-                            <span class="stat-value">12,500</span>
+            <div class="diablo-grid">
+                <!-- COLUNA 1: FOTO PERSONAGEM COM ITENS (CÍRCULO + BACKGROUND) -->
+                <div class="char-col">
+                    <div class="char-frame">
+                        <img src="https://via.placeholder.com/350x450/1a0f0a/e8d5b7?text=BLADSTORM+PERSONAGEM" alt="Bladestorm Personagem" class="char-img">
+                        <div class="char-circle">
+                            <span>33</span>
                         </div>
-                        <div class="stat-row">
-                            <span class="stat-label">Armadura</span>
-                            <span class="stat-value">8,200</span>
-                        </div>
-                        <div class="stat-row">
-                            <span class="stat-label">Vida</span>
-                            <span class="stat-value">5,800</span>
-                        </div>
-                        <div class="stat-row">
-                            <span class="stat-label">Toughness</span>
-                            <span class="stat-value">22,400</span>
+                        <div class="char-stats">
+                            <div>STR 217</div>
+                            <div>DEX 77</div>
+                            <div class="char-level">LVL 97</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- COLUNA 2: IMAGEM CENTRAL -->
-                <div class="ficha-col central">
-                    <div class="ficha-image">
-                        <img src="https://via.placeholder.com/500x700/1a0f0a/e8d5b7?text=BLADSTORM+FICHA" alt="Bladestorm Ficha" loading="lazy">
+                <!-- COLUNA 2: SLOTS CLICÁVEIS VERTICAIS (6 grandes) -->
+                <div class="slots-col">
+                    <h3>Inventário</h3>
+                    <div class="vertical-slots" id="verticalSlots">
+                        <div class="slot-item" data-item="1">
+                            <img src="https://via.placeholder.com/200x250/4a2a2a/d4af37?text=AREAL+TAPESTRY" alt="Areal Tapestry" loading="lazy">
+                            <span class="slot-qty">250</span>
+                        </div>
+                        <div class="slot-item" data-item="2">
+                            <img src="https://via.placeholder.com/200x250/4a2a2a/d4af37?text=CALDEM+NIGHTSHADE" alt="Caldem Nightshade" loading="lazy">
+                            <span class="slot-qty">250</span>
+                        </div>
+                        <div class="slot-item" data-item="3">
+                            <img src="https://via.placeholder.com/200x250/4a2a2a/d4af37?text=CORRUPTED+ANGEL" alt="Corrupted Angel" loading="lazy">
+                            <span class="slot-qty">250</span>
+                        </div>
+                        <div class="slot-item" data-item="4">
+                            <img src="https://via.placeholder.com/200x250/4a2a2a/d4af37?text=ESSENCE+AMETHYST" alt="Essence Amethyst" loading="lazy">
+                            <span class="slot-qty">250</span>
+                        </div>
+                        <!-- Adicione mais slots aqui -->
                     </div>
                 </div>
 
-                <!-- COLUNA 3: SKILLS/DESC DIREITA -->
-                <div class="ficha-col">
-                    <div class="skill-block">
-                        <h3>Skills</h3>
-                        <ul>
-                            <li>Blade Storm (Core)</li>
-                            <li>Rapid Fire</li>
-                            <li>Shadow Step</li>
-                        </ul>
+                <!-- COLUNA 3: ITEM SELECIONADO (mesmo tamanho) -->
+                <div class="details-col">
+                    <h3>Item Selecionado</h3>
+                    <div class="selected-item" id="selectedItem">
+                        <div class="no-item">Clique em um item</div>
                     </div>
-                    <div class="desc-block">
-                        <h3>Descrição</h3>
-                        <p>Lâminas giratórias invocam tempestade de aço, rasgando inimigos em área. Perfeito para controle de multidões no endgame Legion.</p>
+                    <div class="sell-info">
+                        <div>Sell Value: 30k</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        © 2026 Legion Store
-    </footer>
+    <footer>© 2026 Legion Store</footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slots = document.querySelectorAll('.slot-item');
+            const selected = document.getElementById('selectedItem');
+
+            slots.forEach(slot => {
+                slot.addEventListener('click', () => {
+                    // Remove selected anterior
+                    slots.forEach(s => s.classList.remove('selected'));
+                    // Highlight atual
+                    slot.classList.add('selected');
+
+                    const imgSrc = slot.querySelector('img').src;
+                    const itemName = slot.dataset.item;
+                    const qty = slot.querySelector('.slot-qty').textContent;
+
+                    selected.innerHTML = `
+                        <img src="${imgSrc}" alt="${itemName}" class="selected-img">
+                        <div class="item-desc">
+                            <h4>Obtido de Act III Horadric</h4>
+                            <p>Legendary crafting material</p>
+                            <span class="item-qty">${qty}</span>
+                        </div>
+                    `;
+                });
+            });
+        });
+    </script>
 </body>
 </html>
