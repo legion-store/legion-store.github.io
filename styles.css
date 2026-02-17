@@ -1,4 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=MedievalSharp&family=Exo+2:wght@400;600&display=swap');
+/* TUAS FONTES DIABLO PERFEITAS - EXOCOETREAPER + ALEGREYA */
+@font-face {
+    font-family: 'ExocoetReaper';
+    src: url('ExocoetReaper-Medium.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Alegrya Sans';
+    src: url('alegreya-sans.medium.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
 * { box-sizing: border-box; }
 
@@ -6,11 +21,17 @@ body {
     margin: 0;
     background: linear-gradient(180deg, #0a0a0f 0%, #1a0f0a 100%);
     color: #e8d5b7;
-    font-family: 'Exo 2', sans-serif;
+    font-family: 'Alegrya Sans', 'Exo 2', sans-serif;
     line-height: 1.6;
     overflow-x: hidden;
 }
 
+.logo h1, h1, h2, h3, .section-bar h2, .ficha-header h1 {
+    font-family: 'ExocoetReaper', 'Cinzel', serif !important;
+    font-weight: normal;
+}
+
+/* MENU */
 .top-menu {
     position: fixed;
     top: 0;
@@ -32,7 +53,6 @@ body {
 
 .logo h1 {
     margin: 0;
-    font-family: 'Cinzel', serif;
     font-size: 1.8rem;
     color: #e8d5b7;
     text-shadow: 0 0 10px rgba(232,213,183,0.5);
@@ -47,19 +67,19 @@ body {
     color: #e8d5b7;
     text-decoration: none;
     font-weight: 600;
+    font-family: 'Alegrya Sans', sans-serif;
     transition: color 0.3s;
 }
 
 .menu-links a:hover { color: #d4a574; }
 
-/* HERO GIGANTE */
+/* HERO */
 .hero-central {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding-top: 80px;
-    box-sizing: border-box;
 }
 
 .hero-frame {
@@ -71,16 +91,10 @@ body {
     box-shadow: 0 20px 60px rgba(0,0,0,0.8);
 }
 
-.hero-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
+.hero-frame img { width: 100%; height: 100%; object-fit: cover; }
 
 /* CATÁLOGO */
-.catalog-section {
-    padding: 100px 0;
-}
+.catalog-section { padding: 100px 0; }
 
 .container {
     max-width: 1200px;
@@ -94,7 +108,6 @@ body {
 }
 
 .section-bar h2 {
-    font-family: 'Cinzel', serif;
     font-size: 3rem;
     margin: 0;
     background: linear-gradient(45deg, #e8d5b7, #d4a574);
@@ -134,16 +147,13 @@ body {
 .card-title {
     padding: 20px;
     text-align: center;
-    font-family: 'Cinzel', serif;
+    font-family: 'ExocoetReaper', serif;
     font-size: 1.5rem;
     color: #e8d5b7;
 }
 
 /* FICHA DIABLO 4 */
-.ficha-section {
-    padding: 120px 0 80px;
-    min-height: 100vh;
-}
+.ficha-section { padding: 120px 0 80px; min-height: 100vh; }
 
 .ficha-header {
     text-align: center;
@@ -151,98 +161,13 @@ body {
 }
 
 .ficha-header h1 {
-    font-family: 'Cinzel', serif;
     font-size: 4rem;
     margin: 0;
     color: #e8d5b7;
     text-shadow: 0 0 30px rgba(232,213,183,0.5);
 }
 
-.ficha-grid {
-    display: grid;
-    grid-template-columns: 1fr 500px 1fr;
-    gap: 40px;
-    align-items: start;
-}
-
-.ficha-col {
-    background: rgba(42,26,26,0.6);
-    padding: 30px;
-    border-radius: 12px;
-    border: 1px solid #3a2a2a;
-    backdrop-filter: blur(10px);
-}
-
-.central { text-align: center; }
-
-.ficha-image img {
-    width: 100%;
-    height: 600px;
-    object-fit: cover;
-    border-radius: 12px;
-    border: 2px solid #2a1a1a;
-}
-
-.stat-block, .skill-block, .desc-block {
-    margin-bottom: 30px;
-}
-
-.stat-block h3, .skill-block h3, .desc-block h3 {
-    font-family: 'Cinzel', serif;
-    color: #d4a574;
-    margin-bottom: 20px;
-    font-size: 1.3rem;
-}
-
-.stat-row {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(232,213,183,0.2);
-}
-
-.stat-label { font-weight: 600; }
-.stat-value { color: #e8d5b7; }
-
-.skill-block ul {
-    list-style: none;
-    padding: 0;
-}
-
-.skill-block li {
-    padding: 10px 0;
-    border-bottom: 1px solid rgba(232,213,183,0.1);
-    font-weight: 600;
-}
-
-.desc-block p {
-    font-style: italic;
-    color: #c8b59a;
-}
-
-footer {
-    text-align: center;
-    padding: 40px;
-    color: #a8a88e;
-    border-top: 1px solid rgba(232,213,183,0.1);
-}
-
-/* RESPONSIVO */
-@media (max-width: 1024px) {
-    .ficha-grid { grid-template-columns: 1fr; }
-    .central { order: -1; }
-}
-
-@media (max-width: 768px) {
-    .menu-container { flex-direction: column; gap: 15px; }
-    .menu-links { gap: 20px; }
-    .hero-central { padding-top: 120px; }
-    .cards-grid { grid-template-columns: 1fr; }
-    .section-bar h2 { font-size: 2rem; }
-    .ficha-header h1 { font-size: 2.5rem; }
-}
-
-/* DIABLO 4 FICHA EXATA */
+/* DIABLO GRID */
 .diablo-grid {
     display: grid;
     grid-template-columns: 1fr 300px 300px;
@@ -286,6 +211,7 @@ footer {
     font-weight: bold;
     font-size: 1.2rem;
     box-shadow: 0 0 15px rgba(212,175,55,0.6);
+    font-family: 'ExocoetReaper', serif;
 }
 
 .char-stats {
@@ -293,6 +219,7 @@ footer {
     justify-content: space-around;
     font-size: 0.9rem;
     color: #c8b59a;
+    font-family: 'ExocoetReaper', serif;
 }
 
 .char-level {
@@ -300,12 +227,12 @@ footer {
     font-weight: bold;
 }
 
-/* SLOTS VERTICAIS GRANDES */
+/* SLOTS VERTICAIS */
 .slots-col h3 {
     color: #d4af37;
     text-align: center;
     margin-bottom: 20px;
-    font-family: 'Cinzel', serif;
+    font-family: 'ExocoetReaper', serif;
 }
 
 .vertical-slots {
@@ -337,7 +264,7 @@ footer {
 
 .slot-item img {
     width: 100%;
-    height: 220px; /* Altura Diablo-like */
+    height: 220px;
     object-fit: cover;
 }
 
@@ -351,17 +278,19 @@ footer {
     border-radius: 4px;
     font-size: 0.8rem;
     font-weight: bold;
+    font-family: 'ExocoetReaper', serif;
 }
 
-/* ITEM SELECIONADO (MESMO TAMANHO) */
+/* ITEM SELECIONADO */
 .details-col h3 {
     color: #d4af37;
     text-align: center;
     margin-bottom: 20px;
+    font-family: 'ExocoetReaper', serif;
 }
 
 .selected-item {
-    height: 220px; /* Mesmo altura slots */
+    height: 220px;
     border: 3px solid #3a2a2a;
     border-radius: 12px;
     background: rgba(42,26,26,0.6);
@@ -381,6 +310,7 @@ footer {
 .no-item {
     color: #a8a88e;
     font-style: italic;
+    font-family: 'Alegrya Sans', sans-serif;
 }
 
 .item-desc {
@@ -392,6 +322,7 @@ footer {
 .item-desc h4 {
     color: #d4af37;
     margin-bottom: 10px;
+    font-family: 'ExocoetReaper', serif;
 }
 
 .item-qty {
@@ -402,25 +333,39 @@ footer {
     font-weight: bold;
     display: inline-block;
     margin-top: 10px;
+    font-family: 'ExocoetReaper', serif;
 }
 
 .sell-info {
     text-align: center;
     color: #a8a88e;
     font-size: 0.9rem;
+    font-family: 'Alegrya Sans', sans-serif;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    color: #a8a88e;
+    border-top: 1px solid rgba(232,213,183,0.1);
+    font-family: 'Alegrya Sans', sans-serif;
 }
 
 /* RESPONSIVO */
 @media (max-width: 1100px) {
-    .diablo-grid {
-        grid-template-columns: 1fr;
-        text-align: center;
+    .diablo-grid { grid-template-columns: 1fr; text-align: center; }
+    .vertical-slots { 
+        flex-direction: row; 
+        flex-wrap: wrap; 
+        justify-content: center; 
+        max-width: 600px; 
+        margin: 0 auto; 
     }
-    .vertical-slots {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
-        max-width: 600px;
-        margin: 0 auto;
-    }
+}
+
+@media (max-width: 768px) {
+    .menu-container { flex-direction: column; gap: 15px; }
+    .hero-central { padding-top: 120px; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .section-bar h2, .ficha-header h1 { font-size: 2rem; }
 }
