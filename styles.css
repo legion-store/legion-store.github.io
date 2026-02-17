@@ -1,0 +1,223 @@
+/* IMPORTA FONTES DIABLO-LIKE DO GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Exo+2:wght@400;600&display=swap');
+
+body {
+    margin: 0;
+    background: linear-gradient(180deg, #0a0a0f 0%, #1a0f0a 100%);
+    color: #e8d5b7;
+    font-family: 'Exo 2', sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 60px 20px;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    border-bottom: 2px solid #d4af37;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+}
+
+h1 {
+    font-family: 'Cinzel', serif;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    letter-spacing: 6px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    color: #f0e68c;
+}
+
+.subtitle {
+    color: #b8860b;
+    font-size: 1.2rem;
+    margin-top: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.card-post {
+    text-decoration: none;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    border: 1px solid #333;
+}
+
+.card-post:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: #d4af37;
+    box-shadow: 0 20px 40px rgba(212, 175, 55, 0.3);
+}
+
+.card-image {
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(transparent 60%, rgba(0,0,0,0.8) 100%);
+}
+
+.card-info {
+    padding: 20px;
+    background: rgba(17, 17, 23, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.card-info h2 {
+    margin: 0 0 10px 0;
+    font-family: 'Cinzel', serif;
+    font-size: 1.5rem;
+    color: #f0e68c;
+}
+
+.raridade {
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.raridade.legendary { background: linear-gradient(90deg, #ffd700, #ffed4e); color: #000; }
+.raridade.epic { background: linear-gradient(90deg, #9370db, #ba55d3); color: #fff; }
+.raridade.rare { background: linear-gradient(90deg, #4169e1, #6495ed); color: #fff; }
+
+.preview {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 10px 0 0 0;
+}
+
+/* PÁGINA DE FICHA (styles compartilhados) */
+.profile-container {
+    max-width: 900px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.hero-image {
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    border: 3px solid #d4af37;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+.section {
+    background: rgba(17, 17, 23, 0.9);
+    padding: 30px;
+    margin-bottom: 30px;
+    border: 1px solid #444;
+    border-radius: 8px;
+}
+
+.section h3 {
+    font-family: 'Cinzel', serif;
+    color: #f0e68c;
+    margin-top: 0;
+    font-size: 1.8rem;
+    border-bottom: 2px solid #d4af37;
+    padding-bottom: 10px;
+}
+
+/* GRID DE INVENTÁRIO DIABLO */
+.inventory {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 8px;
+    max-width: 600px;
+}
+
+.slot {
+    aspect-ratio: 1;
+    background: rgba(40, 40, 50, 0.8);
+    border: 2px solid #555;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+    border-radius: 4px;
+}
+
+.slot:hover {
+    border-color: #d4af37;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+}
+
+.slot.item {
+    background: linear-gradient(135deg, #444 0%, #666 100%);
+}
+
+.slot.item::before {
+    content: '';
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 4px;
+    background-size: cover;
+    border-radius: 2px;
+}
+
+.slot.tooltip {
+    position: relative;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0,0,0,0.95);
+    color: #fff;
+    padding: 10px;
+    border: 1px solid #d4af37;
+    border-radius: 4px;
+    white-space: nowrap;
+    font-size: 0.8rem;
+    z-index: 10;
+    min-width: 120px;
+}
+
+.slot:hover .tooltip-text {
+    visibility: visible;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    border-top: 1px solid #333;
+    color: #777;
+    margin-top: 60px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .inventory {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
