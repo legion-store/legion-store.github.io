@@ -13,48 +13,63 @@
     </header>
 
     <div class="profile-container">
-        <!-- HERO IMAGE - TROQUE A URL -->
-        <div class="hero-image" style="background-image: url('https://via.placeholder.com/900x500?text=SUA+FOTO+GRANDE');"></div>
+        <div class="diablo-layout">
+            <!-- COLUNA 1: PERSONAGEM (foto + stats) -->
+            <div class="coluna personagem-col">
+                <!-- TROQUE PELA TUA FOTO -->
+                <div class="personagem-image" style="background-image: url('https://via.placeholder.com/400x600?text=TEU+PERSONAGEM');"></div>
+                
+                <div class="stats-panel">
+                    <h3>NOME DO PERSONAGEM</h3>
+                    <div class="stats-grid">
+                        <div><span class="stat-label">Nível:</span> <span class="stat-value">70</span></div>
+                        <div><span class="stat-label">Força:</span> <span class="stat-value">217</span></div>
+                        <div><span class="stat-label">Destreza:</span> <span class="stat-value">177</span></div>
+                        <div><span class="stat-label">Inteligência:</span> <span class="stat-value">164</span></div>
+                        <!-- ADICIONE MAIS -->
+                    </div>
+                </div>
+            </div>
 
-        <!-- LORE/DESCRIÇÃO -->
-        <div class="section">
+            <!-- COLUNA 2: INVENTÁRIO (grid de itens clicáveis) -->
+            <div class="coluna inventory-col">
+                <h3 class="coluna-title">Inventário</h3>
+                <div class="inventory-grid">
+                    <!-- ITEM 1 (clicável) -->
+                    <div class="inventory-slot clicavel" data-item="1">
+                        <div class="item-icon" style="background-image: url('https://via.placeholder.com/80x80?text=Item1');"></div>
+                        <div class="item-qtd">2</div>
+                    </div>
+                    
+                    <!-- ITEM 2 -->
+                    <div class="inventory-slot clicavel" data-item="2">
+                        <div class="item-icon" style="background-image: url('https://via.placeholder.com/80x80?text=Item2');"></div>
+                        <div class="item-qtd">1</div>
+                    </div>
+                    
+                    <!-- VAZIO -->
+                    <div class="inventory-slot vazio"></div>
+                    <!-- DUPLIQUE MAIS SLOTS -->
+                </div>
+            </div>
+
+            <!-- COLUNA 3: ITEM SELECIONADO -->
+            <div class="coluna item-detail-col">
+                <h3 class="coluna-title">Item Selecionado</h3>
+                <div class="item-preview" id="itemPreview">
+                    <div class="no-item">Clique em um item do inventário</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- LORE embaixo -->
+        <div class="section lore-section">
             <h3>História</h3>
-            <!-- SEU TEXTO AQUI -->
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        </div>
-
-        <!-- ATRIBUTOS -->
-        <div class="section">
-            <h3>Atributos</h3>
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 1.1rem;">
-                <div>Força: <span style="color: #d4af37;">85</span></div>
-                <div>Inteligência: <span style="color: #9370db;">72</span></div>
-                <!-- ADICIONE MAIS -->
-            </div>
-        </div>
-
-        <!-- INVENTÁRIO DIABLO STYLE -->
-        <div class="section">
-            <h3>Inventário</h3>
-            <div class="inventory">
-                <!-- SLOTS VAZIOS -->
-                <div class="slot"></div>
-                <div class="slot"></div>
-                
-                <!-- SLOT COM ITEM (TOOLTIP) -->
-                <div class="slot item tooltip">
-                    <div class="tooltip-text">Espada Lendária<br>+50 Ataque<br>Raridade: Legendary</div>
-                </div>
-                
-                <!-- MAIS SLOTS - DUPLIQUE -->
-                <div class="slot item tooltip">
-                    <div class="tooltip-text">Anel Épico<br>+30 Vida</div>
-                </div>
-                <!-- Complete com 24 slots (6x4) -->
-            </div>
+            <p><!-- SEU LORE AQUI --></p>
         </div>
     </div>
 
+    <script src="script.js"></script>
     <footer>© 2026 Legion Store</footer>
 </body>
 </html>
