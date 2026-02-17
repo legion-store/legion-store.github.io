@@ -1,166 +1,53 @@
-/* styles.css - Legion Store (Diablo 4 style) - Fontes fixas */
-
+/* FONTES CORRETAS NO TOPO */
 @font-face {
     font-family: 'ExocetReaper';
     src: url('ExocetReaper-Medium.otf') format('opentype');
-    font-weight: 500; /* Medium */
+    font-weight: 500;
     font-style: normal;
-    font-display: swap; /* Melhora loading */
+    font-display: swap;
 }
-
 @font-face {
     font-family: 'AlegreyaSans';
     src: url('alegreya-sans.medium.ttf') format('truetype');
-    font-weight: 500; /* Medium */
+    font-weight: 500;
     font-style: normal;
     font-display: swap;
 }
 
-/* Reset e base */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* APLICAR */
+body { font-family: 'AlegreyaSans', sans-serif; }
+h1, h2, .logo { font-family: 'ExocetReaper', serif !important; }
 
+/* BASE DIABLO 4 */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 body {
-    background: linear-gradient(180deg, #0a0a0a 0%, #1a0f0f 100%); /* Diablo escuro */
-    color: #e6b800; /* Dourado Diablo */
-    font-family: 'AlegreyaSans', sans-serif;
-    font-size: 16px;
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a0f0f 100%);
+    color: #e6b800;
     line-height: 1.5;
-    overflow-x: hidden;
 }
 
-/* Header */
-header {
-    background: rgba(0, 0, 0, 0.9);
-    padding: 1rem 2rem;
-    border-bottom: 2px solid #e6b800;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
+/* HEADER */
+header { background: rgba(0,0,0,0.9); padding: 1rem 2rem; border-bottom: 2px solid #e6b800; }
+nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; }
+.logo { font-size: 2.5rem; text-shadow: 0 0 10px #e6b800; letter-spacing: 0.1em; }
+.nav-links a { color: #ccc; text-decoration: none; margin-left: 2rem; }
+.nav-links a:hover { color: #e6b800; }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
+/* PÁGINA PRINCIPAL */
+.hero { text-align: center; padding: 4rem 2rem; }
+.hero h1 { font-size: 4rem; text-shadow: 0 0 20px #e6b800; margin-bottom: 3rem; letter-spacing: 0.15em; }
+.cards-grid {
+    max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem;
 }
-
-.logo {
-    font-family: 'ExocetReaper', serif;
-    font-size: 2.5rem;
-    font-weight: 500;
-    color: #e6b800;
-    text-shadow: 0 0 10px #e6b800;
-    letter-spacing: 0.1em;
-}
-
-.nav-links a {
-    color: #ccc;
-    text-decoration: none;
-    margin-left: 2rem;
-    font-family: 'AlegreyaSans', sans-serif;
-    transition: color 0.3s;
-}
-
-.nav-links a:hover {
-    color: #e6b800;
-}
-
-/* Título principal */
-.hero {
-    text-align: center;
-    padding: 4rem 2rem;
-    background: radial-gradient(circle at center, rgba(230, 184, 0, 0.1) 0%, transparent 70%);
-}
-
-.hero h1 {
-    font-family: 'ExocetReaper', serif;
-    font-size: 4rem;
-    color: #e6b800;
-    text-shadow: 0 0 20px #e6b800;
-    margin-bottom: 1rem;
-    letter-spacing: 0.15em;
-}
-
-/* Seção Catálogo */
-.catalog {
-    max-width: 1200px;
-    margin: 4rem auto;
-    padding: 0 2rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 3rem;
-}
-
 .card {
-    background: rgba(20, 10, 10, 0.8);
-    border: 2px solid #4a2c00;
-    border-radius: 8px;
-    padding: 2rem;
-    text-align: center;
-    transition: all 0.3s;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
+    background: rgba(20,10,10,0.8); border: 2px solid #4a2c00; border-radius: 8px; padding: 2rem; text-align: center;
+    transition: all 0.3s; box-shadow: 0 10px 30px rgba(0,0,0,0.8);
 }
+.card:hover { border-color: #e6b800; box-shadow: 0 15px 40px rgba(230,184,0,0.3); transform: translateY(-10px); }
+.card img { width: 100%; height: 250px; object-fit: cover; border-radius: 4px; margin-bottom: 1rem; }
+.card h2 { font-size: 2rem; text-shadow: 0 0 10px #e6b800; }
 
-.card:hover {
-    border-color: #e6b800;
-    box-shadow: 0 15px 40px rgba(230, 184, 0, 0.3);
-    transform: translateY(-10px);
-}
-
-.card img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 1rem;
-}
-
-.card h2 {
-    font-family: 'ExocetReaper', serif;
-    font-size: 2rem;
-    color: #e6b800;
-    margin-bottom: 1rem;
-    text-shadow: 0 0 10px #e6b800;
-}
-
-.card p {
-    font-family: 'AlegreyaSans', sans-serif;
-    color: #ccc;
-}
-
-/* Footer */
-footer {
-    background: rgba(0, 0, 0, 0.95);
-    text-align: center;
-    padding: 2rem;
-    border-top: 2px solid #4a2c00;
-    font-family: 'AlegreyaSans', sans-serif;
-    font-size: 0.9rem;
-    color: #666;
-}
-
-/* Responsivo */
-@media (max-width: 768px) {
-    .hero h1 {
-        font-size: 2.5rem;
-    }
-    
-    .nav-links {
-        display: none; /* Ou mobile menu */
-    }
-    
-    .catalog {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-}
-/* DIABLO 4 FICHA EXATA */
+/* SEU CSS DA FICHA - INTACTO */
 .diablo-grid {
     display: grid;
     grid-template-columns: 1fr 300px 300px;
@@ -342,3 +229,9 @@ footer {
         margin: 0 auto;
     }
 }
+
+@media (max-width: 768px) {
+    .hero h1 { font-size: 2.5rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+}
+footer { background: rgba(0,0,0,0.95); text-align: center; padding: 2rem; border-top: 2px solid #4a2c00; color: #666; }
