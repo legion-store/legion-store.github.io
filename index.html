@@ -5,56 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legion Store</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=MedievalSharp&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- MENU SUPERIOR -->
-    <nav class="top-menu">
-        <div class="menu-container">
-            <div class="logo">
-                <h1>LEGION</h1>
-            </div>
-            <div class="menu-links">
-                <a href="#catalog">Catálogo</a>
-                <a href="#contact">Contato</a>
-            </div>
-        </div>
-    </nav>
+    <header>
+        <nav>
+            <h1 class="logo">LEGION</h1>
+            <ul class="nav-links">
+                <li><a href="#catalogo">Catálogo</a></li>
+            </ul>
+        </nav>
+    </header>
 
-    <!-- HERO GIGANTE LEGION (ABERTURA) -->
-    <section class="hero-central">
-        <div class="hero-frame">
-            <img src="https://via.placeholder.com/1200x800/1a0f0a/e8d5b7?text=LEGI%C3%93N+ABERTURA" alt="Legion Abertura" loading="lazy">
-        </div>
-    </section>
-
-    <!-- CARDS CATÁLOGO -->
-    <section id="catalog" class="catalog-section">
-        <div class="container">
-            <div class="section-bar">
-                <h2>Catálogo Legion</h2>
-            </div>
-            <div class="cards-grid">
-                <a href="bladestorm.html" class="card-post">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/400x600/2a1a1a/e8d5b7?text=BLADSTORM" alt="Bladestorm" loading="lazy">
-                    </div>
-                    <div class="card-title">Bladestorm</div>
-                </a>
-                <a href="#" class="card-post">
-                    <div class="card-image">
-                        <img src="https://via.placeholder.com/400x600/2a1a1a/e8d5b7?text=DEVIL+HORNS" alt="Devil Horns" loading="lazy">
-                    </div>
-                    <div class="card-title">Devil Horns</div>
-                </a>
-            </div>
-        </div>
-    </section>
+    <main class="hero">
+        <h1>CATÁLOGO LEGION</h1>
+        <section id="catalogo" class="cards-grid">
+            <a href="bladestorm.html" class="card">
+                <img src="bladestorm-thumb.jpg" alt="Bladestorm">
+                <h2>Bladestorm</h2>
+            </a>
+            <a href="devil-horns.html" class="card">
+                <img src="devil-horns-thumb.jpg" alt="Devil Horns">
+                <h2>Devil Horns</h2>
+            </a>
+        </section>
+    </main>
 
     <footer>
-        © 2020 Legion Store
+        <p>&copy; Legion Store</p>
     </footer>
 </body>
 </html>
