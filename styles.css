@@ -241,3 +241,186 @@ footer {
     .section-bar h2 { font-size: 2rem; }
     .ficha-header h1 { font-size: 2.5rem; }
 }
+
+/* DIABLO 4 FICHA EXATA */
+.diablo-grid {
+    display: grid;
+    grid-template-columns: 1fr 300px 300px;
+    gap: 30px;
+    align-items: start;
+    padding: 40px 0;
+}
+
+.char-col { text-align: center; }
+
+.char-frame {
+    position: relative;
+    background: rgba(20,10,10,0.8);
+    border: 3px solid #3a2a2a;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.char-img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.char-circle {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(45deg, #d4af37, #e8d5b7);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    box-shadow: 0 0 15px rgba(212,175,55,0.6);
+}
+
+.char-stats {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.9rem;
+    color: #c8b59a;
+}
+
+.char-level {
+    color: #d4af37 !important;
+    font-weight: bold;
+}
+
+/* SLOTS VERTICAIS GRANDES */
+.slots-col h3 {
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Cinzel', serif;
+}
+
+.vertical-slots {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.slot-item {
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s;
+    border: 3px solid #3a2a2a;
+    border-radius: 12px;
+    background: rgba(42,26,26,0.6);
+    overflow: hidden;
+}
+
+.slot-item:hover {
+    border-color: #d4af37;
+    box-shadow: 0 0 20px rgba(212,175,55,0.4);
+}
+
+.slot-item.selected {
+    border-color: #d4af37 !important;
+    box-shadow: 0 0 25px rgba(212,175,55,0.7);
+    background: rgba(212,175,55,0.15);
+}
+
+.slot-item img {
+    width: 100%;
+    height: 220px; /* Altura Diablo-like */
+    object-fit: cover;
+}
+
+.slot-qty {
+    position: absolute;
+    bottom: 8px;
+    right: 8px;
+    background: rgba(0,0,0,0.8);
+    color: #e8d5b7;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+/* ITEM SELECIONADO (MESMO TAMANHO) */
+.details-col h3 {
+    color: #d4af37;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.selected-item {
+    height: 220px; /* Mesmo altura slots */
+    border: 3px solid #3a2a2a;
+    border-radius: 12px;
+    background: rgba(42,26,26,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.selected-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.no-item {
+    color: #a8a88e;
+    font-style: italic;
+}
+
+.item-desc {
+    padding: 20px;
+    text-align: center;
+    color: #e8d5b7;
+}
+
+.item-desc h4 {
+    color: #d4af37;
+    margin-bottom: 10px;
+}
+
+.item-qty {
+    background: rgba(212,175,55,0.2);
+    color: #d4af37;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.sell-info {
+    text-align: center;
+    color: #a8a88e;
+    font-size: 0.9rem;
+}
+
+/* RESPONSIVO */
+@media (max-width: 1100px) {
+    .diablo-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .vertical-slots {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+}
