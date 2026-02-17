@@ -3,42 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legion - Dark Medieval Collection</title>
+    <title>Legion Store - TOKSIK & More</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>LEGION</h1>
-        <div class="subtitle">Dark Medieval Collection</div>
-    </header>
+    <!-- MENU SUPERIOR TOKSIK STYLE -->
+    <nav class="top-menu">
+        <div class="menu-container">
+            <div class="menu-logo">🦋 TOKSIK &amp;</div>
+            <div class="menu-links">
+                <a href="#home">HOME</a>
+                <a href="#cards">CATÁLOGO</a>
+                <a href="#blog">BLOG</a>
+            </div>
+            <div class="menu-right">🖤</div>
+        </div>
+    </nav>
 
-    <div class="container">
-        <!-- CARDS DE PERSONAGENS - DUPLIQUE ESSE BLOCO PRA CADA NOVO PERSONAGEM -->
-        <a href="ficha1.html" class="card-post">
-            <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=SEU+PERSONAGEM+1');">
-                <!-- TROQUE A URL DA IMAGEM AQUI -->
+    <!-- HERO GRANDE TOKSIK -->
+    <section class="hero-section" id="home">
+        <div class="hero-overlay">
+            <!-- TROQUE PELA TUA FOTO PRINCIPAL -->
+            <div class="hero-image" style="background-image: url('https://via.placeholder.com/1920x1080?text=TOKSIS+PRINCIPAL');"></div>
+            <div class="hero-content">
+                <h1 class="hero-title">TOKSIK</h1>
+                <p class="hero-subtitle">Clique para ver perfil</p>
             </div>
-            <div class="card-info">
-                <h2>SEU PERSONAGEM 1</h2>
-                <div class="raridade legendary">Legendary</div>
-                <p class="preview">Lorem ipsum dolor sit amet...</p>
-            </div>
-        </a>
+        </div>
+    </section>
 
-        <!-- EXEMPLO SEGUNDO PERSONAGEM -->
-        <a href="ficha2.html" class="card-post">
-            <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=SEU+PERSONAGEM+2');">
-            </div>
-            <div class="card-info">
-                <h2>SEU PERSONAGEM 2</h2>
-                <div class="raridade epic">Epic</div>
-                <p class="preview">Descrição curta aqui...</p>
-            </div>
-        </a>
-    </div>
+    <!-- CARDS ABAIXO -->
+    <section class="cards-section" id="cards">
+        <div class="container">
+            <a href="ficha1.html" class="card-post hero-card">
+                <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=TOKSIS');"></div>
+                <div class="card-info">
+                    <h2>TOKSIK</h2>
+                    <div class="raridade legendary">Legendary</div>
+                </div>
+            </a>
 
-    <footer>
-        © 2026 Legion Store
-    </footer>
+            <a href="ficha2.html" class="card-post">
+                <div class="card-image" style="background-image: url('https://via.placeholder.com/400x500?text=PERSONAGEM+2');"></div>
+                <div class="card-info">
+                    <h2>PERSONAGEM 2</h2>
+                    <div class="raridade epic">Epic</div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <footer>© 2026 Legion Store</footer>
 </body>
 </html>
