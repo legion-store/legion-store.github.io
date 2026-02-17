@@ -5,55 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Legion Store</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=MedievalSharp&family=Exo+2:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <!-- MENU SUPERIOR -->
     <nav class="top-menu">
         <div class="menu-container">
-            <div class="logo">🦋 TOKSIK &amp;</div>
-            <div class="menu-links">
-                <a href="#">HOME</a>
-                <a href="#catalog">CATÁLOGO</a>
+            <div class="logo">
+                <h1>LEGION</h1>
             </div>
-            <div class="menu-icon">🖤</div>
+            <div class="menu-links">
+                <a href="#catalog">Catálogo</a>
+                <a href="#contact">Contato</a>
+            </div>
         </div>
     </nav>
 
-    <!-- HERO CENTRAL (SEM BORDA AMARELA) -->
+    <!-- HERO GIGANTE LEGION (ABERTURA) -->
     <section class="hero-central">
-        <!-- TUA FOTO COM MOLDURA CUSTOM -->
-        <a href="ficha1.html" class="hero-frame">
-            <div class="hero-placeholder">
-                <!-- TROQUE SÓ ESSA URL -->
-                <img src="https://via.placeholder.com/800x1000?text=TOKSIS" alt="TOKSIS" class="hero-img">
-            </div>
-            <div class="hero-overlay">
-                <h1>TOKSIK</h1>
-                <p>Clique para perfil</p>
-            </div>
-        </a>
-    </section>
-
-    <!-- CATÁLOGO ABAIXO -->
-    <section class="catalog-section" id="catalog">
-        <div class="container">
-            <div class="section-bar">
-                <h2>CATÁLOGO</h2>
-                <div class="bar-line"></div>
-            </div>
-            
-            <a href="ficha2.html" class="card-post">
-                <div class="card-frame">
-                    <img src="https://via.placeholder.com/350x450?text=ITEM+2" alt="">
-                </div>
-                <div class="card-info">
-                    <h3>ITEM 2</h3>
-                    <span class="raridade epic">Epic</span>
-                </div>
-            </a>
+        <div class="hero-frame">
+            <img src="https://via.placeholder.com/1200x800/1a0f0a/e8d5b7?text=LEGI%C3%93N+ABERTURA" alt="Legion Abertura" loading="lazy">
         </div>
     </section>
 
-    <footer>© 2026 Legion Store</footer>
+    <!-- CARDS CATÁLOGO -->
+    <section id="catalog" class="catalog-section">
+        <div class="container">
+            <div class="section-bar">
+                <h2>Catálogo Legion</h2>
+            </div>
+            <div class="cards-grid">
+                <a href="bladestorm.html" class="card-post">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/400x600/2a1a1a/e8d5b7?text=BLADSTORM" alt="Bladestorm" loading="lazy">
+                    </div>
+                    <div class="card-title">Bladestorm</div>
+                </a>
+                <a href="#" class="card-post">
+                    <div class="card-image">
+                        <img src="https://via.placeholder.com/400x600/2a1a1a/e8d5b7?text=DEVIL+HORNS" alt="Devil Horns" loading="lazy">
+                    </div>
+                    <div class="card-title">Devil Horns</div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        © 2026 Legion Store
+    </footer>
 </body>
 </html>
