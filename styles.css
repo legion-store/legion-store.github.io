@@ -1,371 +1,162 @@
-/* TUAS FONTES DIABLO PERFEITAS - EXOCOETREAPER + ALEGREYA */
+/* styles.css - Legion Store (Diablo 4 style) - Fontes fixas */
+
 @font-face {
-    font-family: 'ExocoetReaper';
-    src: url('ExocoetReaper-Medium.otf') format('opentype');
-    font-weight: normal;
+    font-family: 'ExocetReaper';
+    src: url('ExocetReaper-Medium.otf') format('opentype');
+    font-weight: 500; /* Medium */
     font-style: normal;
-    font-display: swap;
+    font-display: swap; /* Melhora loading */
 }
 
 @font-face {
-    font-family: 'Alegrya Sans';
+    font-family: 'AlegreyaSans';
     src: url('alegreya-sans.medium.ttf') format('truetype');
-    font-weight: normal;
+    font-weight: 500; /* Medium */
     font-style: normal;
     font-display: swap;
 }
 
-* { box-sizing: border-box; }
+/* Reset e base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 body {
-    margin: 0;
-    background: linear-gradient(180deg, #0a0a0f 0%, #1a0f0a 100%);
-    color: #e8d5b7;
-    font-family: 'Alegrya Sans', 'Exo 2', sans-serif;
-    line-height: 1.6;
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a0f0f 100%); /* Diablo escuro */
+    color: #e6b800; /* Dourado Diablo */
+    font-family: 'AlegreyaSans', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
     overflow-x: hidden;
 }
 
-.logo h1, h1, h2, h3, .section-bar h2, .ficha-header h1 {
-    font-family: 'ExocoetReaper', 'Cinzel', serif !important;
-    font-weight: normal;
-}
-
-/* MENU */
-.top-menu {
-    position: fixed;
+/* Header */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 1rem 2rem;
+    border-bottom: 2px solid #e6b800;
+    position: sticky;
     top: 0;
-    width: 100%;
-    background: rgba(10,10,15,0.95);
-    backdrop-filter: blur(10px);
-    z-index: 1000;
-    padding: 15px 0;
+    z-index: 100;
 }
 
-.menu-container {
-    max-width: 1200px;
-    margin: 0 auto;
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.logo h1 {
-    margin: 0;
-    font-size: 1.8rem;
-    color: #e8d5b7;
-    text-shadow: 0 0 10px rgba(232,213,183,0.5);
+.logo {
+    font-family: 'ExocetReaper', serif;
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: #e6b800;
+    text-shadow: 0 0 10px #e6b800;
+    letter-spacing: 0.1em;
 }
 
-.menu-links {
-    display: flex;
-    gap: 30px;
-}
-
-.menu-links a {
-    color: #e8d5b7;
+.nav-links a {
+    color: #ccc;
     text-decoration: none;
-    font-weight: 600;
-    font-family: 'Alegrya Sans', sans-serif;
+    margin-left: 2rem;
+    font-family: 'AlegreyaSans', sans-serif;
     transition: color 0.3s;
 }
 
-.menu-links a:hover { color: #d4a574; }
-
-/* HERO */
-.hero-central {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding-top: 80px;
+.nav-links a:hover {
+    color: #e6b800;
 }
 
-.hero-frame {
-    max-width: 90%;
-    max-height: 90%;
-    border: 3px solid #2a1a1a;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.8);
-}
-
-.hero-frame img { width: 100%; height: 100%; object-fit: cover; }
-
-/* CATÁLOGO */
-.catalog-section { padding: 100px 0; }
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.section-bar {
+/* Título principal */
+.hero {
     text-align: center;
-    margin-bottom: 60px;
+    padding: 4rem 2rem;
+    background: radial-gradient(circle at center, rgba(230, 184, 0, 0.1) 0%, transparent 70%);
 }
 
-.section-bar h2 {
-    font-size: 3rem;
-    margin: 0;
-    background: linear-gradient(45deg, #e8d5b7, #d4a574);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 20px rgba(232,213,183,0.3);
-}
-
-.cards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 40px;
-}
-
-.card-post {
-    text-decoration: none;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card-post:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
-}
-
-.card-image {
-    border-radius: 12px;
-    overflow: hidden;
-    border: 2px solid #2a1a1a;
-}
-
-.card-image img {
-    width: 100%;
-    height: 500px;
-    object-fit: cover;
-}
-
-.card-title {
-    padding: 20px;
-    text-align: center;
-    font-family: 'ExocoetReaper', serif;
-    font-size: 1.5rem;
-    color: #e8d5b7;
-}
-
-/* FICHA DIABLO 4 */
-.ficha-section { padding: 120px 0 80px; min-height: 100vh; }
-
-.ficha-header {
-    text-align: center;
-    margin-bottom: 60px;
-}
-
-.ficha-header h1 {
+.hero h1 {
+    font-family: 'ExocetReaper', serif;
     font-size: 4rem;
-    margin: 0;
-    color: #e8d5b7;
-    text-shadow: 0 0 30px rgba(232,213,183,0.5);
+    color: #e6b800;
+    text-shadow: 0 0 20px #e6b800;
+    margin-bottom: 1rem;
+    letter-spacing: 0.15em;
 }
 
-/* DIABLO GRID */
-.diablo-grid {
+/* Seção Catálogo */
+.catalog {
+    max-width: 1200px;
+    margin: 4rem auto;
+    padding: 0 2rem;
     display: grid;
-    grid-template-columns: 1fr 300px 300px;
-    gap: 30px;
-    align-items: start;
-    padding: 40px 0;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 3rem;
 }
 
-.char-col { text-align: center; }
-
-.char-frame {
-    position: relative;
-    background: rgba(20,10,10,0.8);
-    border: 3px solid #3a2a2a;
-    border-radius: 20px;
-    padding: 30px;
-    max-width: 400px;
-    margin: 0 auto;
-}
-
-.char-img {
-    width: 300px;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 15px;
-    display: block;
-    margin-bottom: 20px;
-}
-
-.char-circle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 60px;
-    height: 60px;
-    background: linear-gradient(45deg, #d4af37, #e8d5b7);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    box-shadow: 0 0 15px rgba(212,175,55,0.6);
-    font-family: 'ExocoetReaper', serif;
-}
-
-.char-stats {
-    display: flex;
-    justify-content: space-around;
-    font-size: 0.9rem;
-    color: #c8b59a;
-    font-family: 'ExocoetReaper', serif;
-}
-
-.char-level {
-    color: #d4af37 !important;
-    font-weight: bold;
-}
-
-/* SLOTS VERTICAIS */
-.slots-col h3 {
-    color: #d4af37;
+.card {
+    background: rgba(20, 10, 10, 0.8);
+    border: 2px solid #4a2c00;
+    border-radius: 8px;
+    padding: 2rem;
     text-align: center;
-    margin-bottom: 20px;
-    font-family: 'ExocoetReaper', serif;
-}
-
-.vertical-slots {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
-
-.slot-item {
-    position: relative;
-    cursor: pointer;
     transition: all 0.3s;
-    border: 3px solid #3a2a2a;
-    border-radius: 12px;
-    background: rgba(42,26,26,0.6);
-    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8);
 }
 
-.slot-item:hover {
-    border-color: #d4af37;
-    box-shadow: 0 0 20px rgba(212,175,55,0.4);
+.card:hover {
+    border-color: #e6b800;
+    box-shadow: 0 15px 40px rgba(230, 184, 0, 0.3);
+    transform: translateY(-10px);
 }
 
-.slot-item.selected {
-    border-color: #d4af37 !important;
-    box-shadow: 0 0 25px rgba(212,175,55,0.7);
-    background: rgba(212,175,55,0.15);
-}
-
-.slot-item img {
+.card img {
     width: 100%;
-    height: 220px;
+    height: 250px;
     object-fit: cover;
-}
-
-.slot-qty {
-    position: absolute;
-    bottom: 8px;
-    right: 8px;
-    background: rgba(0,0,0,0.8);
-    color: #e8d5b7;
-    padding: 4px 8px;
     border-radius: 4px;
-    font-size: 0.8rem;
-    font-weight: bold;
-    font-family: 'ExocoetReaper', serif;
+    margin-bottom: 1rem;
 }
 
-/* ITEM SELECIONADO */
-.details-col h3 {
-    color: #d4af37;
-    text-align: center;
-    margin-bottom: 20px;
-    font-family: 'ExocoetReaper', serif;
+.card h2 {
+    font-family: 'ExocetReaper', serif;
+    font-size: 2rem;
+    color: #e6b800;
+    margin-bottom: 1rem;
+    text-shadow: 0 0 10px #e6b800;
 }
 
-.selected-item {
-    height: 220px;
-    border: 3px solid #3a2a2a;
-    border-radius: 12px;
-    background: rgba(42,26,26,0.6);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 20px;
-    overflow: hidden;
+.card p {
+    font-family: 'AlegreyaSans', sans-serif;
+    color: #ccc;
 }
 
-.selected-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.no-item {
-    color: #a8a88e;
-    font-style: italic;
-    font-family: 'Alegrya Sans', sans-serif;
-}
-
-.item-desc {
-    padding: 20px;
-    text-align: center;
-    color: #e8d5b7;
-}
-
-.item-desc h4 {
-    color: #d4af37;
-    margin-bottom: 10px;
-    font-family: 'ExocoetReaper', serif;
-}
-
-.item-qty {
-    background: rgba(212,175,55,0.2);
-    color: #d4af37;
-    padding: 5px 12px;
-    border-radius: 20px;
-    font-weight: bold;
-    display: inline-block;
-    margin-top: 10px;
-    font-family: 'ExocoetReaper', serif;
-}
-
-.sell-info {
-    text-align: center;
-    color: #a8a88e;
-    font-size: 0.9rem;
-    font-family: 'Alegrya Sans', sans-serif;
-}
-
+/* Footer */
 footer {
+    background: rgba(0, 0, 0, 0.95);
     text-align: center;
-    padding: 40px;
-    color: #a8a88e;
-    border-top: 1px solid rgba(232,213,183,0.1);
-    font-family: 'Alegrya Sans', sans-serif;
+    padding: 2rem;
+    border-top: 2px solid #4a2c00;
+    font-family: 'AlegreyaSans', sans-serif;
+    font-size: 0.9rem;
+    color: #666;
 }
 
-/* RESPONSIVO */
-@media (max-width: 1100px) {
-    .diablo-grid { grid-template-columns: 1fr; text-align: center; }
-    .vertical-slots { 
-        flex-direction: row; 
-        flex-wrap: wrap; 
-        justify-content: center; 
-        max-width: 600px; 
-        margin: 0 auto; 
-    }
-}
-
+/* Responsivo */
 @media (max-width: 768px) {
-    .menu-container { flex-direction: column; gap: 15px; }
-    .hero-central { padding-top: 120px; }
-    .cards-grid { grid-template-columns: 1fr; }
-    .section-bar h2, .ficha-header h1 { font-size: 2rem; }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .nav-links {
+        display: none; /* Ou mobile menu */
+    }
+    
+    .catalog {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
 }
