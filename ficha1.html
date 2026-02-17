@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personagem 1 - Legion</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>LEGION</h1>
+        <div class="subtitle">Dark Medieval Collection</div>
+    </header>
+
+    <div class="profile-container">
+        <!-- HERO IMAGE - TROQUE A URL -->
+        <div class="hero-image" style="background-image: url('https://via.placeholder.com/900x500?text=SUA+FOTO+GRANDE');"></div>
+
+        <!-- LORE/DESCRIÇÃO -->
+        <div class="section">
+            <h3>História</h3>
+            <!-- SEU TEXTO AQUI -->
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        </div>
+
+        <!-- ATRIBUTOS -->
+        <div class="section">
+            <h3>Atributos</h3>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; font-size: 1.1rem;">
+                <div>Força: <span style="color: #d4af37;">85</span></div>
+                <div>Inteligência: <span style="color: #9370db;">72</span></div>
+                <!-- ADICIONE MAIS -->
+            </div>
+        </div>
+
+        <!-- INVENTÁRIO DIABLO STYLE -->
+        <div class="section">
+            <h3>Inventário</h3>
+            <div class="inventory">
+                <!-- SLOTS VAZIOS -->
+                <div class="slot"></div>
+                <div class="slot"></div>
+                
+                <!-- SLOT COM ITEM (TOOLTIP) -->
+                <div class="slot item tooltip">
+                    <div class="tooltip-text">Espada Lendária<br>+50 Ataque<br>Raridade: Legendary</div>
+                </div>
+                
+                <!-- MAIS SLOTS - DUPLIQUE -->
+                <div class="slot item tooltip">
+                    <div class="tooltip-text">Anel Épico<br>+30 Vida</div>
+                </div>
+                <!-- Complete com 24 slots (6x4) -->
+            </div>
+        </div>
+    </div>
+
+    <footer>© 2026 Legion Store</footer>
+</body>
+</html>
